@@ -29,7 +29,7 @@ const Dashboard = () => {
           <SideBar />
         </div>
         <div className='flex-1 flex flex-col relative'>
-          <div className='md:hidden p-4 flex items-center'>
+          <div className='md:hidden mt-7 px-4 flex items-center'>
             <SidebarTrigger />
           </div>
           <Navbar />

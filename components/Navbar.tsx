@@ -33,7 +33,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='absolute top-0 left-0 right-0 flex flex-row justify-between items-center p-6 md:p-8 w-full bg-white'>
+    <div className='absolute top-0 left-0 right-0 flex flex-row justify-between items-center mx-auto pl-4 py-6 md:mx-auto md:p-8 md:w-full w-[85%] bg-white'>
         <h1 className='text-2xl text-black font-bold'>Reports</h1>
         <Button onClick={handleDownload} size="sm">
             <Download className="h-4 w-4"/> Download

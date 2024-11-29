@@ -34,7 +34,7 @@ const SideBar = () => {
           <div className='sideBar'><Settings className="w-4 h-4 sm:w-5 sm:h-5" /><span className='my-auto text-xs sm:text-sm'>Settings</span></div>
         </SidebarGroup>
       </SidebarContent>
-      <hr className="border-b border-gray-300 mb-4 w-full mx-auto" />
+      <hr className="bg-white border-gray-300 border-b-0 pb-4 w-full mx-auto" />
       <SidebarFooter className='bg-white'>
         <div className='flex flex-col space-y-1'>
           <Avatar>
