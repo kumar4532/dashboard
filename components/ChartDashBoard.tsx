@@ -11,10 +11,10 @@ interface Activity {
 const ChartDashBoard = ({ activities }: {activities: Activity[]}) => {
   return (
     <Card className="w-full">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 -mt-2 pb-2">
-            <CardTitle className="text-base font-normal">Activity</CardTitle>
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-base sm:text-lg font-normal">Activity</CardTitle>
             <Select defaultValue="month">
-                <SelectTrigger className="w-[110px]">
+                <SelectTrigger className="w-[90px] sm:w-[110px]">
                     <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
@@ -24,21 +24,21 @@ const ChartDashBoard = ({ activities }: {activities: Activity[]}) => {
                 </SelectContent>
             </Select>
         </CardHeader>
-        <hr className="border-b border-gray-300 mb-6 w-[95%] mx-auto" />
+        <hr className="border-b border-gray-300 mb-4 w-[95%] mx-auto" />
         <CardContent>
             <ResponsiveContainer width="100%" height={200}>
                 <BarChart
                     data={activities}
                     margin={{
-                        top: 5,
-                        right: 5,
-                        left: 5,
-                        bottom: 5,
+                    top: 5,
+                    right: 5,
+                    left: 5,
+                    bottom: 5,
                     }}
                     barSize={10}
                 >
-                    <XAxis dataKey="month" scale="point" axisLine={false} tickLine={false} padding={{ left: 20, right: 10, }} tickMargin={10} />
-                    <YAxis domain={[0, 'dataMax']} axisLine={false} tickLine={false} />
+                    <XAxis dataKey="month" scale="point" axisLine={false} tickLine={false} padding={{ left: 10, right: 10 }} tickMargin={8} tick={{fontSize: 12}} />
+                    <YAxis domain={[0, 'dataMax']} axisLine={false} tickLine={false} tick={{fontSize: 12}} />
                     <Tooltip />
                     <Bar dataKey="value" shape fill="#4052d6" background={{ fill: '#eee' }} />
                 </BarChart>
@@ -49,3 +49,4 @@ const ChartDashBoard = ({ activities }: {activities: Activity[]}) => {
 }
 
 export default ChartDashBoard
+

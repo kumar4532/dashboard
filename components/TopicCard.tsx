@@ -10,19 +10,20 @@ interface Topic {
 
 const TopicCard = ({ title, topics }: {title: string, topics: Topic[]}) => {  
   return (
-    <Card>
+    <Card className='h-[100%]'>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
         </CardHeader>
-        <CardContent className='space-y-8 w-full'>
+        <CardContent className='md:space-y-8 space-y-4 w-full'>
           {
             topics.map((topic) => (
-              <div key={topic.name} className='flex flex-row space-x-4 w-full'>
+              <div key={topic.name} className='flex flex-row space-x-2 md:space-x-4 w-full'>
                 <div>
                   <img 
                     src={topic.image} 
                     alt={topic.name}
-                    width={60} 
+                    width={60}
+                    className='h-full'
                   />
                 </div>
                 <div className='w-[65%] space-y-2'>

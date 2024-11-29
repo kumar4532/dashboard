@@ -5,10 +5,10 @@ import SelectTopic from './SelectComponents/SelectTopic'
 
 const SelectItems = () => {
   return (
-    <div className='flex flex-row justify-between'>
-        <SelectTime />
-        <SelectPeople />
-        <SelectTopic />
+    <div className='flex flex-col space-y-2 md:space-y-0 md:flex-row md:justify-between w-full'>
+      <SelectTime />
+      <SelectPeople />
+      <SelectTopic />
     </div>
   )
 }

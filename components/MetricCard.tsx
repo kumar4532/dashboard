@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import { AreaChart, Area, ResponsiveContainer } from 'recharts'
 
 const MetricCard = ({title, value, total, isPercentage} : { title:string, value: number | string, total: number | null, isPercentage: boolean}) => {
 
@@ -44,36 +44,25 @@ const MetricCard = ({title, value, total, isPercentage} : { title:string, value:
   ]
 
   return (
-    <Card className="overflow-hidden h-[20vh]">
-      <CardContent className="p-6">
+    <Card className="overflow-hidden h-[10vh] md:h-[20vh]">
+      <CardContent className="p-4 sm:p-6">
         <div className="space-y-2">
-          <p className="text-sm text-muted-foreground">{title}</p>
+          <p className="text-xs sm:text-sm text-muted-foreground">{title}</p>
           <div className="flex items-baseline space-x-2">
-            <h2 className="text-2xl mt-4 font-bold tracking-tight">{isPercentage ? `${value} %` : value}</h2>
+            <h2 className="text-lg sm:text-2xl font-bold tracking-tight">{isPercentage ? `${value} %` : value}</h2>
             {total && (
-              <span className="text-sm text-muted-foreground">/{total}</span>
+              <span className="text-xs sm:text-sm text-muted-foreground">/{total}</span>
             )}
           </div>
-          <div>
-            {sparklineData && isPercentage && (
+          {sparklineData && isPercentage && (
+            <div className="h-12 md:h-16">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart
-                  width={200}
-                  height={60}
-                  data={sparklineData}
-                  margin={{
-                    top: 0,
-                    right: 0,
-                    left: 0,
-                    bottom: 0,
-                  }}
-                >
-                  <Tooltip />
+                <AreaChart data={sparklineData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
                   <Area type="monotone" dataKey="uv" stroke="#0000ff" fill="#B3B3FF" />
                 </AreaChart>
               </ResponsiveContainer>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>

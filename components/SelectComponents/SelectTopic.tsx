@@ -9,7 +9,8 @@ import {
 
 const SelectTopic = () => {
   return (
-    <Select>
+    <div className='w-full'>
+      <Select>
         <SelectTrigger className="w-[380px] rounded-2xl px-4 py-6">
             <SelectValue placeholder="Topic: All" />
         </SelectTrigger>
@@ -17,7 +18,8 @@ const SelectTopic = () => {
             <SelectItem value='weak'>Weakest</SelectItem>
             <SelectItem value='strong'>Strongest</SelectItem>
         </SelectContent>
-    </Select>
+      </Select>
+    </div>
   )
 }
 

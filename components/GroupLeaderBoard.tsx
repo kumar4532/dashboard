@@ -12,7 +12,7 @@ interface Group {
 
 const GroupLeaderBoard = ({title, groups}: {title: string, groups: Group[]}) => {
   return (
-    <Card>
+    <Card className='md:h-[100%]'>
         <CardHeader>
             <CardTitle>{title}</CardTitle>
         </CardHeader>
