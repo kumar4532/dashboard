@@ -17,6 +17,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { X } from "lucide-react"
 import data from "../../data/task-data.json"
+import { Button } from '../ui/button'
 
 const SelectPeople = () => {
 
@@ -42,6 +43,11 @@ const SelectPeople = () => {
                 <SelectContent>
                     <Command>
                         <div className={`${selectedGroups.length || selectedUsers.length ? "mx-2 w-[380px]": "m-0 p-0"}`}>
+                            {
+                                selectedGroups.length || selectedUsers.length 
+                                    ? <Button className='ml-[90%] h-full p-1' onClick={clearSelections}>Clear</Button> 
+                                    : null
+                            }
                             {selectedGroups.map((group) => (
                                 <Badge
                                     key={group}

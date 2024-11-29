@@ -19,8 +19,8 @@ const TopicCard = ({ title, topics }: {title: string, topics: Topic[]}) => {
             topics.map((topic) => (
               <div key={topic.name} className='flex flex-row space-x-2 md:space-x-4 w-full'>
                 <div>
-                  <img 
-                    src={topic.image} 
+                  <img
+                    src={topic.image}
                     alt={topic.name}
                     width={60}
                     className='h-full'
