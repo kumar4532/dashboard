@@ -44,7 +44,7 @@ const MetricDashBoard = () => {
         isPercentage = {true}
         />
       <MetricCard
-        title="Starting Knowledge" 
+        title="Current Knowledge" 
         value={starting_knowledge_percentage}
         total={null}
         isPercentage = {true}

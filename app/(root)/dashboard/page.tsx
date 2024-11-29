@@ -14,6 +14,8 @@ import GroupLeaderBoard from '@/components/GroupLeaderBoard'
 
 const Dashboard = () => {
 
+  const activities = data.activity.monthly
+
   const weakTopics = data.topics.weakest
   const strongTopics = data.topics.strongest
 
@@ -34,7 +36,7 @@ const Dashboard = () => {
             <SelectItems />
             <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full mt-4 mb-4'>
               <div className="grid grid-cols-3 gap-2"><MetricDashBoard /></div>
-              <div><ChartDashBoard /></div>
+              <div><ChartDashBoard activities={activities}/></div>
               <div><TopicCard title={"Weakest Topics"} topics={weakTopics}/></div>
               <div><TopicCard title={"Strongest Topics"} topics={strongTopics}/></div>
               <div><UserLeaderBoard title={"User Leaderboard"} users={users}/></div>

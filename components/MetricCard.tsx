@@ -1,9 +1,47 @@
 import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 
 const MetricCard = ({title, value, total, isPercentage} : { title:string, value: number | string, total: number | null, isPercentage: boolean}) => {
 
-  const sparklineData = [10, 8, 12, 9, 11, 13, 15]
+  const sparklineData = [
+    {
+      uv: 20,
+    },
+    {
+      uv: 15,
+    },
+    {
+      uv: 35,
+    },
+    {
+      uv: 10,
+    },
+    {
+      uv: 20,
+    },
+    {
+      uv: 15,
+    },
+    {
+      uv: 35,
+    },
+    {
+      uv: 30,
+    },
+    {
+      uv: 45,
+    },
+    {
+      uv: 55,
+    },
+    {
+      uv: 50,
+    },
+    {
+      uv: 55,
+    },
+  ]
 
   return (
     <Card className="overflow-hidden h-[20vh]">
@@ -16,21 +54,26 @@ const MetricCard = ({title, value, total, isPercentage} : { title:string, value:
               <span className="text-sm text-muted-foreground">/{total}</span>
             )}
           </div>
-          {sparklineData && isPercentage && (
-            <div className="h-10">
-              <svg className="w-full h-full" viewBox="0 0 100 20">
-                <path
-                  d={`M ${sparklineData
-                    .map((value, i) => `${(i / (sparklineData.length - 1)) * 100},${20 - value}`)
-                    .join(" L ")}`}
-                  fill="none"
-                  stroke="currentColor"
-                  className="stroke-primary"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          )}
+          <div>
+            {sparklineData && isPercentage && (
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart
+                  width={200}
+                  height={60}
+                  data={sparklineData}
+                  margin={{
+                    top: 0,
+                    right: 0,
+                    left: 0,
+                    bottom: 0,
+                  }}
+                >
+                  <Tooltip />
+                  <Area type="monotone" dataKey="uv" stroke="#0000ff" fill="#B3B3FF" />
+                </AreaChart>
+              </ResponsiveContainer>
+            )}
+          </div>
         </div>
       </CardContent>
     </Card>

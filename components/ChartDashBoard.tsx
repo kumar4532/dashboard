@@ -2,11 +2,13 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
-import data from "../data/task-data.json"
 
-const ChartDashBoard = () => {
-    const activities = data.activity.monthly;
+interface Activity {
+    month: string,
+    value: number
+}
 
+const ChartDashBoard = ({ activities }: {activities: Activity[]}) => {
   return (
     <Card className="w-full">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 -mt-2 pb-2">
