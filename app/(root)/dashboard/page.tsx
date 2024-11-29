@@ -31,10 +31,10 @@ const Dashboard = () => {
             <SidebarTrigger />
           </div>
           <Navbar />
-          <main className='w-full h-screen px-8 overflow-auto md:mt-24 mt-6'>
+          <main className='w-full h-screen px-4 pb-2 md:px-8 overflow-auto mt-6 md:mt-24'>
             <hr className="border-b border-gray-300 md:mb-8 mb-4" />
             <SelectItems />
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full mt-4 mb-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4 w-full mt-4'>
               <div className="grid grid-cols-3 gap-2"><MetricDashBoard /></div>
               <div><ChartDashBoard activities={activities}/></div>
               <div><TopicCard title={"Weakest Topics"} topics={weakTopics}/></div>

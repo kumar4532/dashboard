@@ -44,10 +44,10 @@ const MetricCard = ({title, value, total, isPercentage} : { title:string, value:
   ]
 
   return (
-    <Card className="overflow-hidden h-[10vh] md:h-[20vh]">
+    <Card className="overflow-hidden h-[15vh] md:h-[20vh]">
       <CardContent className="p-4 sm:p-6">
         <div className="space-y-2">
-          <p className="text-xs sm:text-sm text-muted-foreground">{title}</p>
+          <p className="text-xs md:text-sm text-muted-foreground">{title}</p>
           <div className="flex items-baseline space-x-2">
             <h2 className="text-lg sm:text-2xl font-bold tracking-tight">{isPercentage ? `${value} %` : value}</h2>
             {total && (
