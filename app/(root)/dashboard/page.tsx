@@ -25,9 +25,11 @@ const Dashboard = () => {
   return (
     <SidebarProvider>
       <div className='flex h-screen w-full'>
-        <SideBar />
+        <div className='hidden md:block'>
+          <SideBar />
+        </div>
         <div className='flex-1 flex flex-col relative'>
-          <div className='flex items-center p-4 md:hidden'>
+          <div className='md:hidden p-4 flex items-center'>
             <SidebarTrigger />
           </div>
           <Navbar />
@@ -36,11 +38,11 @@ const Dashboard = () => {
             <SelectItems />
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4 w-full mt-4'>
               <div className="grid grid-cols-3 gap-2"><MetricDashBoard /></div>
-              <div><ChartDashBoard activities={activities}/></div>
-              <div><TopicCard title={"Weakest Topics"} topics={weakTopics}/></div>
-              <div><TopicCard title={"Strongest Topics"} topics={strongTopics}/></div>
-              <div><UserLeaderBoard title={"User Leaderboard"} users={users}/></div>
-              <div><GroupLeaderBoard title={"Group Leaderboard"} groups={groups}/></div>
+              <div><ChartDashBoard activities={activities} /></div>
+              <div><TopicCard title={"Weakest Topics"} topics={weakTopics} /></div>
+              <div><TopicCard title={"Strongest Topics"} topics={strongTopics} /></div>
+              <div><UserLeaderBoard title={"User Leaderboard"} users={users} /></div>
+              <div><GroupLeaderBoard title={"Group Leaderboard"} groups={groups} /></div>
             </div>
           </main>
         </div>

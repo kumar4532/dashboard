@@ -10,7 +10,7 @@ interface Activity {
 
 const ChartDashBoard = ({ activities }: {activities: Activity[]}) => {
   return (
-    <Card className="w-full">
+    <Card className="w-full h-[100%]">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-base sm:text-lg font-normal">Activity</CardTitle>
             <Select defaultValue="month">
@@ -26,7 +26,7 @@ const ChartDashBoard = ({ activities }: {activities: Activity[]}) => {
         </CardHeader>
         <hr className="border-b border-gray-300 mb-4 w-[95%] mx-auto" />
         <CardContent>
-            <ResponsiveContainer width="100%" height={200}>
+            <ResponsiveContainer className="h-full" width="100%" height={200}>
                 <BarChart
                     data={activities}
                     margin={{

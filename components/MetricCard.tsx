@@ -44,7 +44,7 @@ const MetricCard = ({title, value, total, isPercentage} : { title:string, value:
   ]
 
   return (
-    <Card className="overflow-hidden h-[15vh] md:h-[20vh]">
+    <Card className="overflow-hidden h-[18vh] md:h-[20vh]">
       <CardContent className="p-4 sm:p-6">
         <div className="space-y-2">
           <p className="text-xs md:text-sm text-muted-foreground">{title}</p>
